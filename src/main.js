@@ -134,3 +134,28 @@ Situation: "${text}"`;
     analyzeBtn.textContent = "Analyze Situation";
   }
 });
+// 1. Press Enter inside the input box to click "Analyze Situation"
+// (Shift + Enter still creates a new line)
+situationInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && !event.shiftKey) {
+    event.preventDefault();
+    if (!analyzeBtn.disabled) {
+      analyzeBtn.click();
+    }
+  }
+});
+
+// 2. Background video sound toggle
+const bgVideo = document.getElementById("bgVideo");
+const soundBtn = document.getElementById("soundBtn");
+
+soundBtn.addEventListener("click", () => {
+  if (bgVideo.muted) {
+    bgVideo.muted = false;
+    bgVideo.play();
+    soundBtn.textContent = "🔊 Sound On";
+  } else {
+    bgVideo.muted = true;
+    soundBtn.textContent = "🔇 Sound Off";
+  }
+});
