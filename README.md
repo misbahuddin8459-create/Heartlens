@@ -1,5 +1,5 @@
 # HeartLens — Privacy-First Relationship Clarity
-
+🔗 **Live Demo:** [Try HeartLens Live](https://heartlens-a2333.web.app/)
 HeartLens helps users untangle relationship concerns by breaking situations down into **Valid Concerns**, **Possible Overthinking**, and a **Suggested Next Step**.
 
 ## Value Proposition & Hybrid AI
