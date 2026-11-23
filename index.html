@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HeartLens — Privacy-First Relationship Clarity</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        max-width: 720px;
+        margin: 40px auto;
+        padding: 0 20px;
+        background: #faf9fb;
+        color: #1f1b24;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .badge {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        background: #ede9fe;
+        color: #5b21b6;
+      }
+      .badge.tone {
+        background: #e0f2fe;
+        color: #0369a1;
+      }
+      textarea {
+        width: 100%;
+        height: 140px;
+        padding: 14px;
+        border-radius: 10px;
+        border: 1px solid #d4d4d8;
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+      button {
+        margin-top: 12px;
+        padding: 12px 22px;
+        border: none;
+        border-radius: 8px;
+        background: #6d28d9;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      #result {
+        margin-top: 24px;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e4e4e7;
+        white-space: pre-wrap;
+        line-height: 1.6;
+        display: none;
+      }
+      .history-section {
+        margin-top: 40px;
+      }
+      .history-card {
+        background: white;
+        border: 1px solid #e4e4e7;
+        border-radius: 10px;
+        padding: 16px;
+        margin-bottom: 12px;
+      }
+      .history-meta {
+        font-size: 0.8rem;
+        color: #71717a;
+        margin-bottom: 6px;
+      }
+      .history-situation {
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .history-response {
+        white-space: pre-wrap;
+        font-size: 0.92rem;
+        line-height: 1.5;
+        color: #3f3f46;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HeartLens</h1>
+    <p>Describe a relationship concern or paste a confusing text. Your thoughts stay private on-device whenever supported.</p>
+
+    <div class="badges">
+      <div id="modeBadge" class="badge">Checking AI mode...</div>
+      <div id="toneBadge" class="badge tone">Tone: loading...</div>
+    </div>
+
+    <textarea
+      id="situationInput"
+      placeholder="Example: They read my message 5 hours ago and didn't reply, even though they posted an Instagram story..."
+    ></textarea>
+
+    <button id="analyzeBtn">Analyze Situation</button>
+
+    <div id="result"></div>
+
+    <div class="history-section">
+      <h2>Your Private Reflections</h2>
+      <div id="historyList">Loading saved reflections...</div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
