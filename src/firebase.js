@@ -16,20 +16,20 @@ import {
 
 // 1. Keep YOUR HeartLens firebaseConfig here
 const firebaseConfig = {
-  apiKey: "AIzaSyDZeW-7LwbeFEjH8RdtZ63jIZC3D9a158c",
-  authDomain: "heartlens-a2333.firebaseapp.com",
-  projectId: "heartlens-a2333",
-  storageBucket: "heartlens-a2333.firebasestorage.app",
-  messagingSenderId: "1008351477464",
-  appId: "1:1008351477464:web:9208bcd518d3d542a9a1ad",
-  measurementId: "G-MVC7H291D7",
+  apiKey: import.meta.env.VITE_FIREBASE_apiKey,
+  authDomain: import.meta.env.VITE_FIREBASE_authDomain,
+  projectId: import.meta.env.VITE_FIREBASE_projectId,
+  storageBucket: import.meta.env.VITE_FIREBASE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_messagingSenderId,
+  appId: import.meta.env.VITE_FIREBASE_appId,
+  measurementId: import.meta.env.VITE_FIREBASE_measurementId,
 };
 
 // 2. Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 
 // 3. App Check Debug Token
-self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
+self.FIREBASE_APPCHECK_DEBUG_TOKEN = import.meta.env.VITE_APPCHECK_DEBUG_TOKEN || true;
 initializeAppCheck(app, {
   provider: new ReCaptchaV3Provider("debug-placeholder-key"),
   isTokenAutoRefreshEnabled: true,
